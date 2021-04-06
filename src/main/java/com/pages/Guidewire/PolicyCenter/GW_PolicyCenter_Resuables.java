@@ -105,6 +105,8 @@ public class GW_PolicyCenter_Resuables extends SeleniumWebDriver_Commands implem
 		GuidewireAutomate("accountnickname", accountnickname, "sendkeys", "testnickname");
 
 		GuidewireAutomate("Organization", Organization, "sendkeys", "ACV Property Insurance");
+		GuidewireAutomate("Organizationsearch", organizationsearch, "click", "");
+		
 		GuidewireAutomate("ProducerCode", ProducerCode, "selectByVisibleText", "301-008578 ACV Property Insurance");
 
 		GuidewireAutomate("Update_Button", Update_Button, "click", "");

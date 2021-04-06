@@ -4,11 +4,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.Utils.Selenium.GW_Base;
+import com.Utils.Selenium.GW_GetDriver;
 import com.pages.Guidewire.GW_LoginCM_PC_BC_CC;
 import com.pages.Guidewire.GW_MenuNavigation_CM_PC_BC_CC;
 import com.pages.Guidewire.PolicyCenter.GW_PolicyCenter_Resuables;
 
-public class GW_PC_AccountCreation extends GW_Base {
+public class GW_PC_AccountCreation extends GW_GetDriver {
 
 	//
 	@Test
@@ -28,7 +29,7 @@ public class GW_PC_AccountCreation extends GW_Base {
 		gwPC.pc_SearchAccountInformation();
 		Assert.assertEquals(gwPC.gettext_SearchAccountResultsMessage(),
 				"Information for the current page:\n" + "The search returned zero results.");
-
+      lg.logout_PolicyCenter();
 	}
 
 	@Test
@@ -51,7 +52,7 @@ public class GW_PC_AccountCreation extends GW_Base {
 		// pc_CreatePersonAccount
 		gwPC.pc_CreatePersonAccount();
 		Assert.assertEquals(gwPC.getHeader_AccountSummary(), "Account Summary");
-
+		lg.logout_PolicyCenter();
 	}
 
 	@Test
@@ -74,6 +75,7 @@ public class GW_PC_AccountCreation extends GW_Base {
 		// pc_CreatePersonAccount
 		gwPC.pc_CreateCompanyAccount();
 		Assert.assertEquals(gwPC.getHeader_AccountSummary(), "Account Summary");
+		lg.logout_PolicyCenter();
 
 	}
 

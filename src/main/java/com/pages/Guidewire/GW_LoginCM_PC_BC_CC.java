@@ -57,32 +57,15 @@ public class GW_LoginCM_PC_BC_CC extends SeleniumWebDriver_Commands implements G
 		gwAutomate(Login, "click", "Null");
 
 	}
-
+	
 	@Override
+
 	public void login_PolicyCenter() {
-		gwAutomate(Username, "sendkeys", "su");
-		gwAutomate(Password, "sendkeys", "gw");
-		gwAutomate(Login, "click", "Null");
-	}
-
-	public void mLoginPolicyCenter2() {
-		getUserName().sendKeys("su");
-		getPassword().sendKeys("gw");
-		getLogin().click();
-
-	}
-
-	public void mLoginPolicyCenter1() {
-		sendkeys_Element(Username, "su");
-		sendkeys_Element(Password, "gw");
-		click_Element(Login);
-
-	}
-
-	public void mLoginPolicyCenter3() {
 		login_Guidewire();
-
 	}
+
+	
+
 
 	@Override
 	public void login_ContactManagement() {
