@@ -26,10 +26,10 @@ public interface GW_PolicyCenter_PO {
     final By firstnameexactmatch = By.xpath("//div[text()='First name is an exact match']/following-sibling::div//input");
     final By lastnameexactmatch = By.xpath("//div[text()='Last name is an exact match']/following-sibling::div//input");
     
-    final By Country = By.xpath("//input[contains(@name,'GlobalAddressInputSet-Country')]");
+    final By Country = By.xpath("//select[contains(@name,'GlobalAddressInputSet-Country')]");
     final By City = By.xpath("//input[contains(@name,'GlobalAddressInputSet-City')]");
     final By County = By.xpath("//input[contains(@name,'GlobalAddressInputSet-County')]");
-    final By State = By.xpath("//input[contains(@name,'GlobalAddressInputSet-State')]");
+    final By State = By.xpath("//select[contains(@name,'GlobalAddressInputSet-State')]");
     final By ZipCode = By.xpath("//input[contains(@name,'GlobalAddressInputSet-PostalCode')]");
 
     /*
@@ -52,13 +52,14 @@ public interface GW_PolicyCenter_PO {
     final By address3 = By.xpath("//input[contains(@name,'AddressLine3')]");
     final By addresstype = By.xpath("//select[contains(@name,'AddressType')]");
     final By description = By.xpath("//input[contains(@name,'AddressDescription')]");
-
+ 
     final By officialID = By.xpath("//input[contains(@name,'OfficialIDDV_Input')]");
 
     final By Organization = By.xpath("//input[contains(@name,'Producer')]");
     final By OrganizationName = By.xpath("//input[contains(@name,'SearchDV-Organization')]");
     final By OrganizationDescription = By.xpath("//input[contains(@name,'SearchDV-Description')]");
     final By OrganizationType = By.xpath("//select[contains(@name,'SearchDV-Type')]");
+    final By organizationsearch=By.xpath("//div[contains(@id,'SelectOrganization')]");
 
     final By ProducerCode = By.xpath("//input[contains(@name,'SearchDV-Code')]");
     final By ProducerDescription = By.xpath("//input[contains(@name,'SearchDV-Description')]");

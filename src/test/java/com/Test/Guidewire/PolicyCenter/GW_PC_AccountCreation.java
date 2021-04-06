@@ -38,7 +38,7 @@ public class GW_PC_AccountCreation extends GW_GetDriver {
 		GW_LoginCM_PC_BC_CC lg = new GW_LoginCM_PC_BC_CC(driver, oExtentTest);
 		GW_PolicyCenter_Resuables gwPC = new GW_PolicyCenter_Resuables(driver, oExtentTest);
 		GW_MenuNavigation_CM_PC_BC_CC mn = new GW_MenuNavigation_CM_PC_BC_CC(driver, oExtentTest);
-
+ 
 		// login_PolicyCenter
 		lg.login_PolicyCenter();
 		// navigate to new account
@@ -73,7 +73,7 @@ public class GW_PC_AccountCreation extends GW_GetDriver {
 		Assert.assertEquals(gwPC.gettext_SearchAccountResultsMessage(),
 				"Information for the current page:\n" + "The search returned zero results.");
 		// pc_CreatePersonAccount
-		gwPC.pc_CreateCompanyAccount();
+		 gwPC.pc_CreateCompanyAccount();
 		Assert.assertEquals(gwPC.getHeader_AccountSummary(), "Account Summary");
 		lg.logout_PolicyCenter();
 
