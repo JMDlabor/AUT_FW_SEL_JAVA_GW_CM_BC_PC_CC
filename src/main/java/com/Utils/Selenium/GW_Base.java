@@ -23,6 +23,7 @@ public class GW_Base {
 
 	public static SimpleDateFormat sdf_ddMMMMyyyy = new SimpleDateFormat("ddMMMMyyyy");
 	public static SimpleDateFormat sdf_ddMMMMyyyyHHmmss = new SimpleDateFormat("ddMMMMyyyy HHmmss");
+	public static SimpleDateFormat sdf_ddMMMyyyy_GW1 = new SimpleDateFormat("MM/dd/yyyy");
 
 	public static String strCurrentDate_ddMMMMyyyy = sdf_ddMMMMyyyy.format(new Date());
 	public static String strCurrentDate_ddMMMMyyyyHHmmss = sdf_ddMMMMyyyyHHmmss.format(new Date());
@@ -60,7 +61,10 @@ public class GW_Base {
 
 	public static LinkedHashMap<String, String> lhm_TestCase_Data = new LinkedHashMap<String, String>();
 	public static LinkedHashMap<String, String> lhm_TestCase_Table_Data = new LinkedHashMap<String, String>();
-	public static String strTestCaseName=null;
+	public static String strTestCaseName = null;
+	public static String strSheetName = null;
+	public static String strClassName = null;
+	public static String strMethodName = null;
 
 	public static String url;
 	public static String StrBrowser;
@@ -69,13 +73,23 @@ public class GW_Base {
 	public static String strGW_Country;
 	public static String strGW_State;
 
+	/*
+	 * Guidewire
+	 */
+	public static String strURL_ContactManagement;
+	public static String strURL_BillingCenter;
+	public static String strURL_PolicyCenter;
+	public static String strURL_ClaimsCenter;
+
 	public static String strJob;
 	public static String strWorkflow;
 	public static String strLOB;
 	public static String strEffectiveDate;
 	public static String strAccountName;
 	public static String strAccountNumber;
+	public static String strSubmissionNumber;
 	public static String strPolicyNumber;
+	public static String strUnderwriter;
 	public static String strAmount;
 
 }
