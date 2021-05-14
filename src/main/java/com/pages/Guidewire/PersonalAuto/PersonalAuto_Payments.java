@@ -45,10 +45,8 @@ public class PersonalAuto_Payments extends SeleniumWebDriver_Commands implements
 
 		GuidewireAutomate_Validation("Frequency", PA_P_Frequency, "equals",
 				lhm_TestCase_Table_Data.get("PA_P_Frequency"));
-		GuidewireAutomate_Validation("Down Payment", PA_P_DownPayment, "fetch",
-				lhm_TestCase_Table_Data.get("PA_P_DownPayment"));
-		GuidewireAutomate_Validation("Installements", PA_P_Installements, "fetch",
-				lhm_TestCase_Table_Data.get("PA_P_Installements"));
+//		GuidewireAutomate_Validation("Down Payment", PA_P_DownPayment, "fetch", lhm_TestCase_Table_Data.get("PA_P_DownPayment"));
+//		GuidewireAutomate_Validation("Installements", PA_P_Installements, "fetch", lhm_TestCase_Table_Data.get("PA_P_Installements"));
 
 		lhm_TestCase_Data.putAll(lhm_TestCase_Table_Data);
 		lhm_TestCase_Table_Data.clear();
@@ -170,8 +168,7 @@ public class PersonalAuto_Payments extends SeleniumWebDriver_Commands implements
 				+ "']/ancestor::td[contains(@class,'gw-CellWidget')]/following-sibling::td['DownPayment'=substring(@id,197,string-length(@id))]//div[@class='gw-value']/div/div[1]");
 
 		GuidewireAutomate("Payment Plan", PA_PS_PaymentPlan, "clickAndwait", "");
-		GuidewireAutomate_Validation("Down Payment", PA_PS_DownPayment, "fetch",
-				lhm_TestCase_Table_Data.get("PA_PS_DownPayment"));
+		GuidewireAutomate_Validation("Down Payment", PA_PS_DownPayment, "fetch", lhm_TestCase_Table_Data.get("PA_PS_DownPayment"));
 		GuidewireAutomate_Validation("Installment", PA_PS_Installment, "fetch",
 				lhm_TestCase_Table_Data.get("PA_PS_Installment"));
 		GuidewireAutomate_Validation("Total", PA_PS_Total, "fetch", lhm_TestCase_Table_Data.get("PA_PS_Total"));

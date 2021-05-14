@@ -127,4 +127,10 @@ public interface PersonalAuto_PolicyReview_PO {
 	 * 
 	 * void vehicleLevelCoverages() throws Throwable;
 	 */
+	
+	/*
+	 * rewrite
+	 */
+	final By Tab_Differences=By.xpath("//div[contains(@id,'DiffsTab')]");
+	final By Tab_PolicyReview=By.xpath("//div[contains(@id,'RewriteWizard_DifferencesScreen-PolicyReviewTab')]");
 }

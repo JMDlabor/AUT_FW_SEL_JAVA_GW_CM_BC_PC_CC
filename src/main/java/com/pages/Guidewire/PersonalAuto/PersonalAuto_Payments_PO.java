@@ -26,9 +26,9 @@ public interface PersonalAuto_Payments_PO {
 	final By PA_P_Frequency = By.xpath(
 			"//div[contains(@id,'PaymentsSummaryInputSet-Frequency')]//div[@class='gw-value-readonly-wrapper']");
 	final By PA_P_DownPayment = By.xpath(
-			"//div[@id='SubmissionWizard-SubmissionWizard_PaymentScreen-BindSummaryDV-PaymentsSummaryInputSet-DownPayment']");
+			"//div[@id='PaymentScreen-BindSummaryDV-PaymentsSummaryInputSet-DownPayment']");
 	final By PA_P_Installements = By.xpath(
-			"//div[@id='SubmissionWizard-SubmissionWizard_PaymentScreen-BindSummaryDV-PaymentsSummaryInputSet-Installments']");
+			"//div[@id='PaymentScreen-BindSummaryDV-PaymentsSummaryInputSet-Installments']");
 
 	/*
 	 * Invoicing

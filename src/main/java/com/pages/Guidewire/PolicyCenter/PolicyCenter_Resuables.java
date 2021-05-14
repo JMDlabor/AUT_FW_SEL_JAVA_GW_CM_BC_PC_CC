@@ -77,12 +77,25 @@ public class PolicyCenter_Resuables extends SeleniumWebDriver_Commands implement
 		case "Bind Options":
 			GuidewireAutomate("Bind Options", BindOptions_Button, "click", "");
 			break;
+		case "Schedule Cancellation":
+			GuidewireAutomate("Schedule Cancellation", BindOptions_ScheduleCancellation_Button, "clickAndwait", "");
+			GuidewireAutomate_Handle("alertaccept", "NA");
+			break;
+		case "Cancel Now":
+			GuidewireAutomate("Cancel Now", Bindoptions_CancelNow_Button, "clickAndwait", "");
+			GuidewireAutomate_Handle("alertaccept", "NA");
+			break;
 		case "Bind Only":
 			GuidewireAutomate("Bind Only", BindOptions_BindOnly_Button, "clickAndwait", "");
 			GuidewireAutomate_Handle("alertaccept", "NA");
 			break;
 		case "Issue Policy":
 			GuidewireAutomate("Issue Policy", Bindoptions_IssuePolicy_Button, "clickAndwait", "");
+			GuidewireAutomate_Handle("alertaccept", "NA");
+			break;
+		case "Issue Policy for Other Transactions":
+			GuidewireAutomate("Issue Policy", IssuePolicy_Button, "clickAndwait", "");
+			GuidewireAutomate_Handle("alertaccept", "NA");
 			break;
 		case "Withdraw Transaction":
 			GuidewireAutomate("Withdraw Transaction", CloseOptions_WithdrawTransaction_Button, "click", "");
@@ -99,7 +112,10 @@ public class PolicyCenter_Resuables extends SeleniumWebDriver_Commands implement
 		case "Withdraw Transaction1":
 			GuidewireAutomate("Withdraw Transaction", WithdrawTransaction_Button, "clickAndwait", "");
 			break;
-
+		case "Reinstate":
+			GuidewireAutomate("Reinstate", Reinstate_Button, "clickAndwait", "");
+			GuidewireAutomate_Handle("alertaccept", "NA");
+			break;
 		default:
 			break;
 		}
@@ -128,6 +144,10 @@ public class PolicyCenter_Resuables extends SeleniumWebDriver_Commands implement
 			break;
 		case "EffectiveDate":
 			strInfobar = getText_Element(InfoBar_EffectiveDate);
+			break;
+		case "Status":
+			strInfobar = getText_Element(InfoBar_Status);
+			Selenium_Utils_DataBase.UpdateData_MSExcel_WorkSheet_Fillo("searchValues", "Job", strInfobar);
 			break;
 		case "AccountName":
 			strInfobar = getText_Element(InfoBar_AccountName);
@@ -323,14 +343,11 @@ public class PolicyCenter_Resuables extends SeleniumWebDriver_Commands implement
 				"Confirmation");
 		GuidewireAutomate_Validation("PolicyNumber", SCFP_PolicyNumber, "equals",
 				lhm_TestCase_Table_Data.get("PA_CP_PolicyNumber"));
-		GuidewireAutomate_Validation("Primary_Named_Insured", SCFP_Primary_Named_Insured, "equals",
-				lhm_TestCase_Table_Data.get("PA_CP_Primary_Name_ Insured"));
-		GuidewireAutomate_Validation("Address", SCFP_Address, "equals", lhm_TestCase_Table_Data.get("PA_CP_Address"));
-		GuidewireAutomate_Validation("County", SCFP_County, "equals", lhm_TestCase_Table_Data.get("PA_CP_County"));
-		GuidewireAutomate_Validation("Address_Type", SCFP_Address_Type, "equals",
-				lhm_TestCase_Table_Data.get("PA_CP_Address _Type"));
-		GuidewireAutomate_Validation("Address_Description", SCFP_Address_Description, "equals",
-				lhm_TestCase_Table_Data.get("PA_CP_Address Description"));
+		GuidewireAutomate_Validation("Primary_Named_Insured", SCFP_Primary_Named_Insured, "equals", lhm_TestCase_Table_Data.get("PA_CP_Primary_Name_ Insured"));
+		//GuidewireAutomate_Validation("Address", SCFP_Address, "equals", lhm_TestCase_Table_Data.get("PA_CP_Address"));
+		//GuidewireAutomate_Validation("County", SCFP_County, "equals", lhm_TestCase_Table_Data.get("PA_CP_County"));
+		//GuidewireAutomate_Validation("Address_Type", SCFP_Address_Type, "equals", lhm_TestCase_Table_Data.get("PA_CP_Address _Type"));
+		//GuidewireAutomate_Validation("Address_Description", SCFP_Address_Description, "equals", lhm_TestCase_Table_Data.get("PA_CP_Address Description"));
 
 		lhm_TestCase_Data.putAll(lhm_TestCase_Table_Data);
 		lhm_TestCase_Table_Data.clear();
@@ -349,16 +366,18 @@ public class PolicyCenter_Resuables extends SeleniumWebDriver_Commands implement
 		GuidewireAutomate_Validation("Screen Header", PolicyCenter_Resuables_PO.Screen_Header, "equals",
 				"Start Reinstatement");
 		GuidewireAutomate_Validation("PolicyDetails", SR_PolicyDetails, "equals", "Policy Details");
-		GuidewireAutomate_Validation("TermType", SR_PD_TermType, "equals",
-				lhm_TestCase_Table_Data.get("PA_SR_Term _Type"));
-		GuidewireAutomate_Validation("TermNumber", SR_PD_TermNumber, "equals",
-				lhm_TestCase_Table_Data.get("PA_SR_Term _Number"));
-		GuidewireAutomate_Validation("EffectiveDate", SR_PD_EffectiveDate, "equals",
-				lhm_TestCase_Table_Data.get("PA_SR_Effective_Date"));
-		GuidewireAutomate_Validation("ExpirationDate", SR_PD_ExpirationDate, "equals",
-				lhm_TestCase_Table_Data.get("PA_SR_Expiration_Date"));
-		GuidewireAutomate_Validation("WrittenDate", SR_PD_WrittenDate, "equals",
-				lhm_TestCase_Table_Data.get("PA_SR_Written_Date"));
+		/*
+		 * GuidewireAutomate_Validation("TermType", SR_PD_TermType, "equals",
+		 * lhm_TestCase_Table_Data.get("PA_SR_Term _Type"));
+		 * GuidewireAutomate_Validation("TermNumber", SR_PD_TermNumber, "equals",
+		 * lhm_TestCase_Table_Data.get("PA_SR_Term _Number"));
+		 * GuidewireAutomate_Validation("EffectiveDate", SR_PD_EffectiveDate, "equals",
+		 * lhm_TestCase_Table_Data.get("PA_SR_Effective_Date"));
+		 * GuidewireAutomate_Validation("ExpirationDate", SR_PD_ExpirationDate,
+		 * "equals", lhm_TestCase_Table_Data.get("PA_SR_Expiration_Date"));
+		 * GuidewireAutomate_Validation("WrittenDate", SR_PD_WrittenDate, "equals",
+		 * lhm_TestCase_Table_Data.get("PA_SR_Written_Date"));
+		 */
 
 		lhm_TestCase_Data.putAll(lhm_TestCase_Table_Data);
 		lhm_TestCase_Table_Data.clear();
@@ -370,12 +389,9 @@ public class PolicyCenter_Resuables extends SeleniumWebDriver_Commands implement
 				strTestCaseName);
 
 		GuidewireAutomate_Validation("AffinityGroup", SR_AffinityGroup, "equals", "Affinity Group");
-		GuidewireAutomate_Validation("ReinstatementDate", SR_AG_ReinstatementDate, "equals",
-				lhm_TestCase_Table_Data.get("PA_SR_Effective_Date_of_Reinstatement"));
-		GuidewireAutomate("ReasonCode", SR_AG_ReasonCode, "selectByVisibleTextAndwait",
-				lhm_TestCase_Table_Data.get("PA_SR_Reason"));
-		GuidewireAutomate("ReasonDescription", SR_AG_ReasonDescription, "clearANDsendKeys",
-				lhm_TestCase_Table_Data.get("PA_SR_Reason_Description"));
+		GuidewireAutomate_Validation("ReinstatementDate", SR_AG_ReinstatementDate, "equals", lhm_TestCase_Table_Data.get("PA_SR_Effective_Date_of_Reinstatement"));
+		GuidewireAutomate("ReasonCode", SR_AG_ReasonCode, "selectByVisibleTextAndwait", lhm_TestCase_Table_Data.get("PA_SR_Reason"));
+		GuidewireAutomate("ReasonDescription", SR_AG_ReasonDescription, "clearANDsendKeys", lhm_TestCase_Table_Data.get("PA_SR_Reason_Description"));
 
 		lhm_TestCase_Data.putAll(lhm_TestCase_Table_Data);
 		lhm_TestCase_Table_Data.clear();

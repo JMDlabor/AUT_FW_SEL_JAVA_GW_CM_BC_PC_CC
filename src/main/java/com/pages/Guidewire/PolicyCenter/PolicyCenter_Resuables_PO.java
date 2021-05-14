@@ -15,8 +15,8 @@ public interface PolicyCenter_Resuables_PO {
 			.xpath("//div[contains(@id,'InfoBar-Workflow')]//div[@class='gw-label gw-infoValue']");
 	final By InfoBar_LOB = By.xpath("//div[contains(@id,'InfoBar-LOBLabel')]//div[@class='gw-label']");
 	final By InfoBar_EffectiveDate = By.xpath("//div[contains(@id,'InfoBar-EffectiveDate')]//div[@class='gw-label']");
-	final By InfoBar_AccountName = By
-			.xpath("//div[contains(@id,'InfoBar-AccountName')]//div[@class='gw-label gw-infoValue']");
+	final By InfoBar_Status = By.xpath("//div[contains(@id,'InfoBar-StatusAndExpDate')]//div[@class='gw-label']");
+	final By InfoBar_AccountName = By.xpath("//div[contains(@id,'InfoBar-AccountName')]//div[@class='gw-label gw-infoValue']");
 	final By InfoBar_AccountNumber = By
 			.xpath("//div[contains(@id,'InfoBar-AccountNumber')]//div[@class='gw-label gw-infoValue']");
 	final By InfoBar_PolicyNumber = By
@@ -40,6 +40,8 @@ public interface PolicyCenter_Resuables_PO {
 			"//div[contains(@class,'gw-isScreenTitle')]//div[@class='gw-TitleBar--title' and @role='heading' and text()='Qualification']");
 	final By Quote_Header = By.xpath(
 			"//div[contains(@class,'gw-isScreenTitle')]//div[@class='gw-TitleBar--title' and @role='heading' and text()='Quote']");
+	final By Forms_Header = By.xpath(
+			"//div[contains(@class,'gw-isScreenTitle')]//div[@class='gw-TitleBar--title' and @role='heading' and text()='Forms']");
 	final By Payment_Header = By.xpath(
 			"//div[contains(@class,'gw-isScreenTitle')]//div[@class='gw-TitleBar--title' and @role='heading' and text()='Payment']");
 	final By PolicySummary_Header = By.xpath(
@@ -92,6 +94,7 @@ public interface PolicyCenter_Resuables_PO {
 			"//div[@id='gw-center-title-toolbar']//div[contains(@id,'BindOptions-BindOnly')]/div[@role='menuitem']");
 	final By Bindoptions_IssuePolicy_Button = By.xpath(
 			"//div[@id='gw-center-title-toolbar']//div[contains(@id,'BindOptions-BindAndIssue')]/div[@role='menuitem']");
+	final By IssuePolicy_Button = By.xpath("//div[contains(@id,'BindRewrite')]");
 	final By CloseOptions_Button = By
 			.xpath("//div[@id='gw-center-title-toolbar']//div[contains(@id,'CloseOptions')]/div[@role='button']");
 	final By CloseOptions_WithdrawTransaction_Button = By.xpath(
@@ -102,9 +105,9 @@ public interface PolicyCenter_Resuables_PO {
 			"//div[@id='gw-center-title-toolbar']//div[contains(@id,'CloseOptions-NotTakenJob')]/div[@role='menuitem']");
 	final By PrintQuote_Button = By.xpath(
 			"//div[@id='gw-center-title-toolbar']//div[contains(@id,'CreateSubmissionQuote')]/div[@role='button']");
-
 	final By WithdrawTransaction_Button = By
 			.xpath("//div[@id='gw-center-title-toolbar']//div[contains(@id,'BindOptions')]");
+	final By Reinstate_Button = By.xpath("//div[contains(@id,'ToolbarButtonSet-Reinstate')]/div[@role='button']");
 
 	/*
 	 * New Submissions
@@ -139,7 +142,7 @@ public interface PolicyCenter_Resuables_PO {
 	final By OrganizationName = By.xpath("//input[contains(@name,'SearchDV-Organization')]");
 	final By OrganizationDescription = By.xpath("//input[contains(@name,'SearchDV-Description')]");
 
-	final By Of_OfferingSelection = By.xpath("//select[@name='SubmissionWizard-OfferingScreen-OfferingSelection']");
+	final By Of_OfferingSelection = By.xpath("//select[contains(@name,'OfferingScreen-OfferingSelection')]");
 
 
 	/*

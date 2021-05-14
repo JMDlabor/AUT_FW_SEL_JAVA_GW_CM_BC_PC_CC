@@ -149,6 +149,7 @@ public interface GW_CM_PC_BC_CC_TabNavigation_PO {
 			.xpath("//div[contains(@id,'StartRewriteMenuItemSet-RewriteNewTerm')]//div[@class='gw-label']");
 	final By Action_NewPolicyTransaction_RewriteRemainderOfTerm = By
 			.xpath("//div[contains(@id,'RewriteRemainderOfTerm')]//div[@class='gw-label']");
+	final By Action_NewPolicyTransaction_RewriteFullTerm = By.xpath("//div[contains(@id,'MenuItemSet-RewriteFullTerm')]");
 
 	final By My_Summary = By
 			.xpath("//div[@id='Desktop-MenuLinks-Desktop_Underwriter_MySummary']/div[1]/div[text()='Summary']");

@@ -19,22 +19,18 @@ public class PersonalAuto_Coverages extends SeleniumWebDriver_Commands implement
 
 	public static void coveragesAppliedtoallVehiclesIn() throws Throwable {
 
-		lhm_TestCase_Table_Data = Selenium_Utils_DataBase.getData_MSExcel_WorkSheet_Fillo("paCoverages",
-				strTestCaseName);
+		lhm_TestCase_Table_Data = Selenium_Utils_DataBase.getData_MSExcel_WorkSheet_Fillo("paCoverages",strTestCaseName);
 
-		GuidewireAutomate_Validation("Screen_Header", PolicyCenter_Resuables_PO.Screen_Header, "equals",
-				"PA Coverages");
+		GuidewireAutomate_Validation("Screen_Header", PolicyCenter_Resuables_PO.Screen_Header, "equals","PA Coverages");
 
 		GuidewireAutomate("Coverages tab", PACoverages_CoveragesTab, "click", "");
 
-		GuidewireAutomate_Validation("Coverages applied to all vehicles", PAC_CT_CoveragesAppliedtoAllVehicles,
-				"contains", "Coverages applied to all vehicles");
+		GuidewireAutomate_Validation("Coverages applied to all vehicles", PAC_CT_CoveragesAppliedtoAllVehicles, "contains", "Coverages applied to all vehicles");
 
 		/*
 		 * Liability - Bodily Injury and Property Damage
 		 */
-		String strPAC_CT_CATAV_Liability_BodilyInjuryPropertyDamage = lhm_TestCase_Table_Data
-				.get("PAC_CT_CATAV_Liability_BodilyInjuryPropertyDamage");
+		String strPAC_CT_CATAV_Liability_BodilyInjuryPropertyDamage = lhm_TestCase_Table_Data.get("PAC_CT_CATAV_Liability_BodilyInjuryPropertyDamage");
 		if (strPAC_CT_CATAV_Liability_BodilyInjuryPropertyDamage.equalsIgnoreCase("Verify")) {
 			GuidewireAutomate_Validation("Liability - Bodily Injury and Property Damage",
 					PAC_CT_CATAV_Liability_BodilyInjuryPropertyDamage, "isDisabled",
@@ -139,27 +135,18 @@ public class PersonalAuto_Coverages extends SeleniumWebDriver_Commands implement
 		 */
 		String strPAC_CT_CAPV_Comprehensive = lhm_TestCase_Table_Data.get("PAC_CT_CAPV_Comprehensive");
 		if (strPAC_CT_CAPV_Comprehensive.equalsIgnoreCase("Add")) {
-			GuidewireAutomate("Comprehensive", PAC_CT_CAPV_Comprehensive, "clickAndwait",
-					lhm_TestCase_Table_Data.get("PAC_CT_CAPV_Comprehensive"));
-			GuidewireAutomate_Validation("Comprehensive", PAC_CT_CAPV_Comprehensive, "isSelected",
-					lhm_TestCase_Table_Data.get("PAC_CT_CAPV_Comprehensive"));
-			GuidewireAutomate("Comprehensive Deductible", PAC_CT_CAPV_C_ComprehensiveDeductible, "selectByVisibleText",
-					lhm_TestCase_Table_Data.get("PAC_CT_CAPV_C_ComprehensiveDeductible"));
+			GuidewireAutomate("Comprehensive", PAC_CT_CAPV_Comprehensive, "clickAndwait", lhm_TestCase_Table_Data.get("PAC_CT_CAPV_Comprehensive"));
+			GuidewireAutomate_Validation("Comprehensive", PAC_CT_CAPV_Comprehensive, "isSelected",lhm_TestCase_Table_Data.get("PAC_CT_CAPV_Comprehensive"));
+			GuidewireAutomate("Comprehensive Deductible", PAC_CT_CAPV_C_ComprehensiveDeductible, "selectByVisibleText",lhm_TestCase_Table_Data.get("PAC_CT_CAPV_C_ComprehensiveDeductible"));
 		} else if (strPAC_CT_CAPV_Comprehensive.equalsIgnoreCase("Verify")) {
-			GuidewireAutomate_Validation("Comprehensive", PAC_CT_CAPV_Comprehensive, "isSelected",
-					lhm_TestCase_Table_Data.get("PAC_CT_CAPV_Comprehensive"));
-			GuidewireAutomate_Validation("Comprehensive Deductible", PAC_CT_CAPV_C_ComprehensiveDeductible,
-					"FirstSelectedOptionEquals", lhm_TestCase_Table_Data.get("PAC_CT_CAPV_C_ComprehensiveDeductible"));
+			GuidewireAutomate_Validation("Comprehensive", PAC_CT_CAPV_Comprehensive, "isSelected",lhm_TestCase_Table_Data.get("PAC_CT_CAPV_Comprehensive"));
+			GuidewireAutomate_Validation("Comprehensive Deductible", PAC_CT_CAPV_C_ComprehensiveDeductible,"FirstSelectedOptionEquals", lhm_TestCase_Table_Data.get("PAC_CT_CAPV_C_ComprehensiveDeductible"));
 		} else if (strPAC_CT_CAPV_Comprehensive.equalsIgnoreCase("Modify")) {
-			GuidewireAutomate_Validation("Comprehensive", PAC_CT_CAPV_Comprehensive, "isSelected",
-					lhm_TestCase_Table_Data.get("PAC_CT_CAPV_Comprehensive"));
-			GuidewireAutomate("Comprehensive Deductible", PAC_CT_CAPV_C_ComprehensiveDeductible, "selectByVisibleText",
-					lhm_TestCase_Table_Data.get("PAC_CT_CAPV_C_ComprehensiveDeductible"));
+			GuidewireAutomate_Validation("Comprehensive", PAC_CT_CAPV_Comprehensive, "isSelected",lhm_TestCase_Table_Data.get("PAC_CT_CAPV_Comprehensive"));
+			GuidewireAutomate("Comprehensive Deductible", PAC_CT_CAPV_C_ComprehensiveDeductible, "selectByVisibleText",lhm_TestCase_Table_Data.get("PAC_CT_CAPV_C_ComprehensiveDeductible"));
 		} else if (strPAC_CT_CAPV_Comprehensive.equalsIgnoreCase("Remove")) {
-			GuidewireAutomate("Comprehensive", PAC_CT_CAPV_Comprehensive, "clickAndwait",
-					lhm_TestCase_Table_Data.get("PAC_CT_CAPV_Comprehensive"));
-			GuidewireAutomate_Validation("Comprehensive", PAC_CT_CAPV_Comprehensive, "isNotSelected",
-					lhm_TestCase_Table_Data.get("PAC_CT_CAPV_Comprehensive"));
+			GuidewireAutomate("Comprehensive", PAC_CT_CAPV_Comprehensive, "clickAndwait",lhm_TestCase_Table_Data.get("PAC_CT_CAPV_Comprehensive"));
+			GuidewireAutomate_Validation("Comprehensive", PAC_CT_CAPV_Comprehensive, "isNotSelected",lhm_TestCase_Table_Data.get("PAC_CT_CAPV_Comprehensive"));
 		} else {
 			throw new InterruptedIOException("Comprehensive - No supported Type = " + strPAC_CT_CAPV_Comprehensive);
 		}
@@ -183,12 +170,9 @@ public class PersonalAuto_Coverages extends SeleniumWebDriver_Commands implement
 		 */
 		String strPAC_ACT_CATAV_RentalCarLossOfUse = lhm_TestCase_Table_Data.get("PAC_ACT_CATAV_RentalCarLossOfUse");
 		if (strPAC_ACT_CATAV_RentalCarLossOfUse.equalsIgnoreCase("Add")) {
-			GuidewireAutomate("Rental Car Loss of Use", PAC_ACT_CATAV_RentalCarLossOfUse, "clickAndwait",
-					lhm_TestCase_Table_Data.get("PAC_ACT_CATAV_RentalCarLossOfUse"));
-			GuidewireAutomate_Validation("Rental Car Loss of Use", PAC_ACT_CATAV_RentalCarLossOfUse, "isSelected",
-					lhm_TestCase_Table_Data.get("PAC_ACT_CATAV_RentalCarLossOfUse"));
-			GuidewireAutomate("Rental Car Loss of Use Limit", PAC_ACT_CATAV_RCL_RentalCarLossOfUseLimit, "selectByVisibleText",
-					lhm_TestCase_Table_Data.get("PAC_ACT_CATAV_RCL_RentalCarLossOfUseLimit"));
+			GuidewireAutomate("Rental Car Loss of Use", PAC_ACT_CATAV_RentalCarLossOfUse, "clickAndwait",lhm_TestCase_Table_Data.get("PAC_ACT_CATAV_RentalCarLossOfUse"));
+			GuidewireAutomate_Validation("Rental Car Loss of Use", PAC_ACT_CATAV_RentalCarLossOfUse, "isSelected",lhm_TestCase_Table_Data.get("PAC_ACT_CATAV_RentalCarLossOfUse"));
+			GuidewireAutomate("Rental Car Loss of Use Limit", PAC_ACT_CATAV_RCL_RentalCarLossOfUseLimit, "selectByVisibleText",lhm_TestCase_Table_Data.get("PAC_ACT_CATAV_RCL_RentalCarLossOfUseLimit"));
 		} else if (strPAC_ACT_CATAV_RentalCarLossOfUse.equalsIgnoreCase("Verify")) {
 			GuidewireAutomate_Validation("Rental Car Loss of Use", PAC_ACT_CATAV_RentalCarLossOfUse, "isSelected",
 					lhm_TestCase_Table_Data.get("PAC_ACT_CATAV_RentalCarLossOfUse"));

@@ -24,49 +24,36 @@ public class GW_PC_PersonalAuto_Rewrite_FullTerm extends GW_GetDriver {
 	@Test
 	public void AUT_PA_PC_Rewrite_FullTerm_01() throws Throwable {
 
+		
 		GW_CM_PC_BC_CC_Login.login_PolicyCenter();
 		PolicyCenter_Resuables.pcTabNavigation_Policy_Search();
+		
+		strAccountName = PolicyCenter_Resuables.infoBar("AccountName");
+		strAccountNumber = PolicyCenter_Resuables.infoBar("AccountNumber");
+		
 		PolicyCenter_PolicySummary.detail_Verify();
 
 		GW_CM_PC_BC_CC_TabNavigation.pcMenuNavigation("Rewrite Full Term");
 
-		strAccountName = PolicyCenter_Resuables.infoBar("AccountName");
-		strAccountNumber = PolicyCenter_Resuables.infoBar("AccountNumber");
-		strSubmissionNumber = PolicyCenter_Resuables.infoBar("SubmissionNumber");
-
 		PolicyCenter_Resuables.offering();
 
 		PolicyCenter_Resuables.clickButton("Next");
-		PersonalAuto_Qualification.qualification();
 
 		PolicyCenter_Resuables.clickButton("Next");
-		PersonalAuto_PolicyInfo.primaryNamedInsured();
-		PersonalAuto_PolicyInfo.pi_OfficialID();
-		PersonalAuto_PolicyInfo.policyDetails();
-		PersonalAuto_PolicyInfo.affinityGroup();
-		PersonalAuto_PolicyInfo.producerOfRecord();
-		PersonalAuto_PolicyInfo.underWritingCompany();
-
+		PersonalAuto_Drivers.driver_Add_NewPerson();
+		
 		PolicyCenter_Resuables.clickButton("Next");
-		PersonalAuto_Drivers.driver_Add_ExistingDriver();
-		PersonalAuto_Drivers.driver_ContatDetails("VERIFY");
-		PersonalAuto_Drivers.driver_Roles("EDIT"); //
-
-		PolicyCenter_Resuables.clickButton("Next");
-		PersonalAuto_Vehicles.createVehicles();
-		PersonalAuto_Vehicles.assignDriver();
-
+		
 		PolicyCenter_Resuables.clickButton("Next");
 		PersonalAuto_Coverages.coveragesAppliedtoallVehiclesIn();
 		PersonalAuto_Coverages.coveragesAppliedperVehiclesIn();
-		PersonalAuto_Coverages.additionalcoveragesAppliedtoallVehiclesIn();
-		PersonalAuto_Coverages.additionalcoveragesAppliedperVehiclesIn();
-
+		
 		PolicyCenter_Resuables.clickButton("Next");
 		PersonalAuto_RiskAnalysis.button_Verify();
 
 		PolicyCenter_Resuables.clickButton("Next");
-		PersonalAuto_PolicyReview.policyDetails();
+		PolicyCenter_Resuables.clickButton("Policy Review");
+		PersonalAuto_PolicyReview.clickTab_PolicyReview("Policy Review");
 		PersonalAuto_PolicyReview.policyLevelCoverages();
 		PersonalAuto_PolicyReview.vehicleLevelCoverages();
 		PersonalAuto_PolicyReview.vehicleLevelCoverages_VehicleCoverages();
@@ -88,13 +75,8 @@ public class GW_PC_PersonalAuto_Rewrite_FullTerm extends GW_GetDriver {
 		PolicyCenter_Resuables.clickButton("Next");
 		PersonalAuto_Payments.premiumSummary();
 		PersonalAuto_Payments.payments();
-		PersonalAuto_Payments.invoicing();
-		PersonalAuto_Payments.billing();
-		PersonalAuto_Payments.paymentSchedule();
-		PersonalAuto_Payments.upFrontPayment();
-
-		PolicyCenter_Resuables.clickButton("Bind Options");
-		PolicyCenter_Resuables.clickButton("Bind Only");
+				
+		PolicyCenter_Resuables.clickButton("Issue Policy for Other Transactions");
 		strJob = PolicyCenter_Resuables.infoBar("Job");
 		strLOB = PolicyCenter_Resuables.infoBar("LOB");
 		strAccountName = PolicyCenter_Resuables.infoBar("AccountName");

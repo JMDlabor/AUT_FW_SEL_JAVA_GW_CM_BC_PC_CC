@@ -46,7 +46,7 @@ public class Selenium_WebDriverEventListener extends GW_GetDriver implements Web
 	}
 
 	public void afterFindBy(By by, WebElement element, WebDriver driver) {
-		System.out.println("Found Element By : " + by.toString());
+		//System.out.println("Found Element By : " + by.toString());
 		//oExtentTest.log(Status.INFO, "Working on Element By: " + element.toString());
 	}
 

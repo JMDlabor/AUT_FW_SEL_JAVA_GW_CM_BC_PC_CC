@@ -46,6 +46,15 @@ public class PolicyCenter_SubmissionBound extends SeleniumWebDriver_Commands imp
 		GuidewireAutomate("View your Policy", SB_ViewYourPolicy, "clickAndwait", "NA");
 
 	}
+	
+	public static void Cancellation_ViewYourPolicy() throws Throwable {
+
+		GuidewireAutomate_Validation("Screen Header", PolicyCenter_Resuables_PO.Screen_Header, "equals",
+				"Cancellation Bound");
+		
+		GuidewireAutomate("View your Policy", SB_ViewYourPolicy, "clickAndwait", "NA");
+
+	}
 
 	// ------>clicking on submission manager
 	public static void GoToTheSubmissionManagerforthisAccount(String type) throws Throwable {

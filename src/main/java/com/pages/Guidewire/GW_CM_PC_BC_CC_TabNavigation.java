@@ -264,7 +264,7 @@ public class GW_CM_PC_BC_CC_TabNavigation extends SeleniumWebDriver_Commands
 			break;
 		case "Cancel Policy":
 			GuidewireAutomate("Actions", Menu_Actions, "click", "");
-			GuidewireAutomate("Cancel Policy", Menu_Actions, "click", "");
+			GuidewireAutomate("Cancel Policy", Action_NewPolicyTransaction_CancelPolicy, "click", "");
 			break;
 		case "Change Policy":
 			GuidewireAutomate("Actions", Menu_Actions, "click", "");
@@ -277,7 +277,7 @@ public class GW_CM_PC_BC_CC_TabNavigation extends SeleniumWebDriver_Commands
 			break;
 		case "Reinstate Policy":
 			GuidewireAutomate("Actions", Menu_Actions, "click", "");
-			GuidewireAutomate("Reinstate Policy", Menu_Actions, "click", "");
+			GuidewireAutomate("Reinstate Policy", Action_NewPolicyTransaction_Reinstate, "click", "");
 			break;
 		case "Rewrite Remainder of Term":
 			GuidewireAutomate("Actions", Menu_Actions, "click", "");
@@ -287,6 +287,10 @@ public class GW_CM_PC_BC_CC_TabNavigation extends SeleniumWebDriver_Commands
 		case "Rewrite New Term":
 			GuidewireAutomate("Actions", Menu_Actions, "click", "");
 			GuidewireAutomate("Rewrite New Term", Menu_Actions, "click", "");
+			break;
+		case "Rewrite Full Term":
+			GuidewireAutomate("Actions", Menu_Actions, "click", "");
+			GuidewireAutomate("Rewrite Full Term", Action_NewPolicyTransaction_RewriteFullTerm, "click", "");
 			break;
 		case "Rescind Cancellation":
 			break;

@@ -12,8 +12,7 @@ public interface PolicyCenter_PolicySummary_PO {
 			"//div[contains(@id,'PolicyDetailsDetailViewTile_DV-Product')]//div[@class='gw-value-readonly-wrapper']");
 	final By PS_D_Offering = By.xpath(
 			"//div[contains(@id,'PolicyDetailsDetailViewTile_DV-Offering')]//div[@class='gw-value-readonly-wrapper']");
-	final By PS_D_PrimaryNamedInsured = By.xpath(
-			"//div[contains(@id,'PolicyDetailsDetailViewTile_DV-PrimaryNamedInsured_button')]");
+	final By PS_D_PrimaryNamedInsured = By.xpath("//div[contains(@id,'PolicyDetailsDetailViewTile_DV-PrimaryNamedInsured_button')]");
 	final By PS_D_Underwriter = By.xpath(
 			"//div[contains(@id,'PolicyDetailsDetailViewTile_DV-Underwriter')]//div[@class='gw-value-readonly-wrapper']");
 	final By PS_D_EffectiveDate = By.xpath(

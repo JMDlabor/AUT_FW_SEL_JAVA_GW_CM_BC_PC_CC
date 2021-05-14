@@ -55,22 +55,27 @@ public class PersonalAuto_PolicyReview extends SeleniumWebDriver_Commands implem
 
 		GuidewireAutomate_Validation("Personal Auto Line", PR_PersonalAutoLine, "equals", "Personal Auto Line");
 
-		GuidewireAutomate_Validation("Policy Level Coverages", PR_PAL_PolicyLevelCoverages, "equals",
-				"Policy Level Coverages");
-		GuidewireAutomate_Validation("Coverage - Auto Liability Package", PR_PAL_PLC_AutoLiabilityPackage, "equals",
-				lhm_TestCase_Table_Data.get("PR_PAL_PLC_AutoLiabilityPackage"));
-		GuidewireAutomate_Validation("Auto Liability Package Value", PR_PAL_PLC_AutoLiabilityPackage_Value, "equals",
-				lhm_TestCase_Table_Data.get("PR_PAL_PLC_AutoLiabilityPackage_Value"));
-		GuidewireAutomate_Validation("Coverage - Medical Limit Coverage", PR_PAL_PLC_MedicalLimit, "equals",
-				lhm_TestCase_Table_Data.get("PR_PAL_PLC_MedicalLimit"));
-		GuidewireAutomate_Validation("Medical Limit Coverage Value", PR_PAL_PLC_MedicalLimit_Value, "equals",
-				lhm_TestCase_Table_Data.get("PR_PAL_PLC_MedicalLimit_Value"));
+		GuidewireAutomate_Validation("Policy Level Coverages", PR_PAL_PolicyLevelCoverages, "equals","Policy Level Coverages");
+		GuidewireAutomate_Validation("Coverage - Auto Liability Package", PR_PAL_PLC_AutoLiabilityPackage, "equals", lhm_TestCase_Table_Data.get("PR_PAL_PLC_AutoLiabilityPackage"));
+		GuidewireAutomate_Validation("Auto Liability Package Value", PR_PAL_PLC_AutoLiabilityPackage_Value, "equals", lhm_TestCase_Table_Data.get("PR_PAL_PLC_AutoLiabilityPackage_Value"));
+		GuidewireAutomate_Validation("Coverage - Medical Limit Coverage", PR_PAL_PLC_MedicalLimit, "equals", lhm_TestCase_Table_Data.get("PR_PAL_PLC_MedicalLimit"));
+		GuidewireAutomate_Validation("Medical Limit Coverage Value", PR_PAL_PLC_MedicalLimit_Value, "equals", lhm_TestCase_Table_Data.get("PR_PAL_PLC_MedicalLimit_Value"));
 
 		lhm_TestCase_Data.putAll(lhm_TestCase_Table_Data);
 		lhm_TestCase_Table_Data.clear();
 
 	}
 
+	public static void clickTab_PolicyReview(String Tabname) throws Throwable {
+
+		if (Tabname.equalsIgnoreCase("Differences")) {
+			GuidewireAutomate("Search", Tab_Differences, "clickAndwait", "");
+		}else if (Tabname.equalsIgnoreCase("Policy Review")) {
+			GuidewireAutomate("Search", Tab_PolicyReview, "clickAndwait", "");
+		}
+		
+	}
+	
 	public static void vehicleLevelCoverages() throws Throwable {
 
 		// Fetch data
