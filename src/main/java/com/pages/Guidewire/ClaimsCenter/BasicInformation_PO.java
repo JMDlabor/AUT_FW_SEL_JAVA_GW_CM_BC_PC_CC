@@ -36,5 +36,5 @@ public interface BasicInformation_PO {
 	final By dupButton = By
 			.id("NewClaimDuplicatesWorksheet-NewClaimDuplicatesScreen-NewClaimDuplicatesWorksheet_CloseButton");
 
-	void basicInfo() throws Throwable;
+	 void basicInfo() throws Throwable;
 }

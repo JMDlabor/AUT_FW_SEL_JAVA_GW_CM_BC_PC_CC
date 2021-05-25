@@ -4,27 +4,33 @@ import org.openqa.selenium.By;
 
 public interface GW_BillingCenter_PO {
 
-	
 
 
-	
-	
-	
-	
+
+
+
+
+
 
 	/*
 	 * BillingCenter Menu Options End
 	 * ------------------------------------------------------------------------------------------------------------------
 	 */
-	
-	
+
+
 	/*
 	 * search account information
 	 */
 
-
-	final By AccountNumber = By.xpath("//input[contains(@name,'NewAccountDV-AccountNumber')]");
-	final By AccountName = By.xpath("//input[contains(@name,'NewAccountDV-AccountName')]");
+	final By NewAccount_Header=By.xpath("//div[@id='NewAccount-NewAccountScreen-ttlBar']//div[ @class='gw-TitleBar--title' and text()='New Account']");
+	final By SearchforAccounts_Header=By.xpath("//div[@id='AccountSearchPopup-AccountSearchScreen-ttlBar']//div[ @class='gw-TitleBar--title' and text()='Search for Accounts']");
+	final By PolicyIssuanceWizardStep1_Header=By.xpath("//div[@id='NewPolicyWizard-NewPolicyWizardSummaryStepScreen-ttlBar']//div[ @class='gw-TitleBar--title']");
+	final By PolicyIssuanceWizardStep2_Header=By.xpath("//div[@id='NewPolicyWizard-NewPolicyWizardChargeStepScreen-ttlBar']//div[ @class='gw-TitleBar--title']");
+	final By AccountSummary_Header=By.xpath("//div[@id='AccountSummary-AccountSummaryScreen-ttlBar']//div[ @class='gw-TitleBar--title']");
+	final By AccountNumber = By.xpath("//input[contains(@name,'AccountNumberCriterion')]");
+	final By AccountName = By.xpath("//input[contains(@name,'AccountName')]");
+	final By ServiceTier=By.xpath("//select[contains(@name,'NewAccountDV-CustomerServiceTier')]");
+	final By SecurityZone=By.xpath("//select[contains(@name,'NewAccountDV-SecurityZone')]");
 	final By AccountType = By.xpath("//select[contains(@name,'NewAccountDV-AccountTypeInput')]");
 	final By BillingPlan = By.xpath("//select[contains(@name,'NewAccountDV-BillingPlan')]");
 	final By DelinquencyPlan = By.xpath("//select[contains(@name,'NewAccountDV-DelinquencyPlan')]");
@@ -90,8 +96,9 @@ public interface GW_BillingCenter_PO {
 	final By accountnickname = By.xpath("//input[contains(@name,'Nickname')]");
 	final By AccountSegment = By.xpath("//select[contains(@name,'SearchDV-AccountSegmentCriterion')]");
 	final By AccountStatus = By.xpath("//select[contains(@name,'SearchDV-DelinquencyStatusCriterion')]");
-
+    final By ParentAccount_SearchButton=By.xpath("//div[contains(@id,'ParentAccount-AccountPicker')]//span[contains(@class,'gw-font-icon')]");
 	final By Search_Button = By.xpath("//div[contains(@id,'SearchLinksInputSet-Search')]");
+	final By Select_Button=By.xpath("//div[contains(@id,'AccountSearchResultsLV-0-_Select')]//div[@class='gw-label']");
 	final By Reset_Button = By.xpath("//div[contains(@id,'SearchLinksInputSet-Reset')]");
 
 	final By SearchAccountResults_Msg = By.xpath("//div[@id='NewAccount-NewAccountScreen-_msgs-0']");
@@ -105,7 +112,7 @@ public interface GW_BillingCenter_PO {
 	final By EnterAccountInformation = By
 			.xpath("//div[contains(@id,'NewAccountScreen-ttlBar')]//div[text()='Enter Account Information']");
 
-	final By Update_Button = By.xpath("//div[contains(@id,'Update']");
+	final By Update_Button = By.xpath("//div[contains(@id,'Update')]"); 
 	final By AddExistingContact_Button = By.xpath("//div[contains(@id,'ContactsLV_tb-addExistingContact')]");
 
 	final By WrightConstruction_Select = By.xpath(
@@ -149,18 +156,43 @@ public interface GW_BillingCenter_PO {
 	final By PolicyIssuanceWizard2 = By.xpath(
 			"//div[contains(@id,'Screen-ttlBar')]//div[contains(text(),'Policy Issuance Wizard - Step 2 of 2')]");
 
-	final By AS_AccountName = By.id("AccountSummary-AccountSummaryScreen-Name");
-	final By AS_PayoffAmount = By.id("AccountSummary-AccountSummaryScreen-PayoffAmount");
+	final By AS_AccountName = By.xpath("//div[@id='AccountSummary-AccountSummaryScreen-Name']//div[@class='gw-ActionValueWidget']");
+	final By AS_PrimaryContact=By.xpath("//div[@id='AccountSummary-AccountSummaryScreen-PrimaryContact']//div[@class='gw-ActionValueWidget']");
+	final By AS_Currency=By.xpath("//div[@id='AccountSummary-AccountSummaryScreen-Currency']//div[@class='gw-label']");
+	final By AS_PayoffAmount = By.xpath("//div[@id='AccountSummary-AccountSummaryScreen-PayoffAmount']//div[@class='gw-value-readonly-wrapper']");
 	final By AS_PolicyNumber = By
 			.xpath("//table[@class='gw-ListViewWidget--table gw-table']//td[contains(@id,'PolicyNumber_Cell')]");
 	final By AS_TotalValue = By
 			.xpath("//table[@class='gw-ListViewWidget--table gw-table']//td[contains(@id,'TotalValue_Cell')]");
 
 
-
+    
 	final By InvoiceDetails = By.xpath(
 			"//table[@class='gw-ListViewWidget--table gw-table']//tr[contains(@id,'DetailPanel-AccountInvoicesLV') and contains(@class,'listDetail')]");
 
+	/*
+	 *  FundsTracking xpath
+	 *
+	 */
+	final By FundsTracking_Header=By.xpath("//div[@id='AccountDetailFundsTracking-AccountDetailFundsTrackingScreen-ttlBar']//div[ @class='gw-TitleBar--title' and text()='Funds Tracking']");
+	final By FT_FundsSources_Tab=By.xpath("//div[contains(@id,'FundsSourcesCardTab')]//div[@role='tab']");
+	final By FT_FundsUses_Tab=By.xpath("//div[contains(@id,'FundsUsesCardTab')]//div[@role='tab']");
+	
+	
+	final By Payments_Header=By.xpath("//div[@id='AccountPayments-AccountDetailPaymentsScreen-ttlBar']//div[ @class='gw-TitleBar--title' and text()='Payments']");
+	final By Payments_PaymentDetails_Tab=By.xpath("//div[contains(@id,'AccountPaymentDistributionItemsCV-PaymentDetailsTab')]//div[@role='tab']");
+	final By Payments_SuspenseItems_Tab=By.xpath("//div[contains(@id,'AccountPaymentDistributionItemsCV-suspenseItemsCardTab')]//div[@role='tab']");
+	final By Payments_PreviousVersions_Tab=By.xpath("//div[contains(@id,'AccountPaymentDistributionItemsCV-reversedMoniesTab')]//div[@role='tab']");
+	
+	final By UpdateButton=By.xpath("//div[contains(@id,'Update')]");
+ 
+	/*
+	 * Direct Bill Payment
+	 */
+	final By DBP_Header=By.xpath("//div[@id='NewDirectBillPayment-EditDBPaymentScreen-ttlBar']//div[ @class='gw-TitleBar--title']");
+	final By DBP_Amount=By.xpath("//input[contains(@name,'PaymentDetailsDV-Amount')]");
+	final By DBP_ExecuteWithoutDistribution=By.xpath("//div[contains(@id,'ExecuteWithoutDistribution')]//div[@role='button']");
+	
 	void bc_SearchAccountInformation() throws Throwable;
 
 	void bc_NewAccount() throws Throwable;
